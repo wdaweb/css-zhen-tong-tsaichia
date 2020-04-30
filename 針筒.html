@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100%;
+        }
+
+        #middle {
+            position: absolute;
+            border: gray solid 1px;
+            width: 800px;
+            height: 200px;
+            background:
+                linear-gradient(90deg, rgba(255, 255, 255, 0) 45%, black 0%, black 55%, rgba(248, 248, 24, 0.267) 0%),
+                linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(159, 157, 157, 0.385), rgba(255, 255, 255, 0)), white;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+
+        #middle::before {
+            content: '';
+            position: absolute;
+            border: gray solid 1px;
+            border-radius: 2%;
+            width: 1000px;
+            height: 130px;
+            right: -12%;
+            top: 18%;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(159, 157, 157, 0.385), rgba(255, 255, 255, 0)), white;
+            z-index: -1;
+        }
+
+        #middle::after {
+            content: '';
+            position: absolute;
+            width: 800px;
+            height: 20px;
+            top: 0%;
+            background: repeating-linear-gradient(90deg, black 0, black 0.25%, rgba(255, 255, 255, 0)0.25%, rgba(255, 255, 255, 0) 4%);
+            z-index: 1;
+        }
+
+        /* #middle::after {
+            content: '';
+            position: absolute;
+            width: 1000px;
+            height: 150px;
+            right: -12%;
+            top: 18%;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(159, 157, 157, 0.385), rgba(255, 255, 255, 0));
+            z-index: 1;
+        } */
+
+        #front {
+            width: 80px;
+            height: 200px;
+            border: 1px solid gray;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(159, 157, 157, 0.385), rgba(255, 255, 255, 0)), white;
+            border-radius: 2%;
+            position: absolute;
+            left: -15%;
+        }
+
+        #front::before {
+            content: 'Made in Taiwan';
+            width: 200px;
+            font-size: 1.5rem;
+            position: absolute;
+            bottom: 0;
+            left: 150%;
+            color: gray;
+            z-index: 5;
+        }
+
+        #front::after {
+            content: '___________';
+            width: 200px;
+            font-size: 1.5rem;
+            position: absolute;
+            bottom: 48%;
+            left: 1270%;
+            color: gray;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="middle">
+        <div id="front"></div>
+    </div>
+</body>
+
+</html>
